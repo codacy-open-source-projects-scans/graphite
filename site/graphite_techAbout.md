@@ -9,7 +9,7 @@ parent: About Graphite
 
 * [Introduction](graphite_techAbout#introduction)
 * [Graphite font tables](graphite_techAbout#graphite-font-tables)
-* [Graphite engine implementation](#graphite-engine-implementation)
+* [Graphite engine implementations](#graphite-engine-implementations)
 * [Graphite and OpenType](graphite_techAbout#graphite-and-opentype)
 
 ## Introduction
@@ -20,7 +20,10 @@ The Graphite system consists of:
 * the Graphite compiler - used to compile the GDL program along with a font to generate the Graphite-enabled version of the font
 * the Graphite engine - uses the Graphite font to assist a text-processing application in performing text layout
 
+{: .image-tight }
 ![Graphite system architecture](assets/images/graphite_arch_diagram.png)
+
+<figcaption>Graphite system architecture</figcaption>
 
 The compiler takes as input a TrueType font and a GDL program that has been written to correspond to it. The output of the compiler is a font that has been extended by including several tables used by the Graphite engine (see [Graphite font tables below](graphite_techAbout#graphite-font-tables)).
 
@@ -38,13 +41,13 @@ To create a Graphite-enabled font, the compiler adds several TrueType tables to 
 * **Feat** - feature table, similar to Apple's feat table
 * **Sill** - language table, containing mappings between language codes and features
 
-The [compiler package](graphite_compilerDownload) contains more complete documentation of these tables and their formats.
+The [&#x2197; compiler package](https://github.org/silnrsi/grcompiler){:target="_blank"} contains more complete documentation of these tables and their formats.
 
 ## Graphite engine implementations
 
 There are two existing implementations of the Graphite engine. The original engine is packaged under the name "SilGraphite"; the initial implementation was done in 2000. The Graphite2 engine implementation began in 2010.
 
-The  [SilGraphite engine](https://sourceforge.net/projects/silgraphite){:target="_blank"} is currently used by OpenOffice, XeTeX, FieldWorks, and WorldPad. It includes some features not included in Graphite2, but is considerably slower. [Graphite2](https://projects.palaso.org/projects/graphitedev){:target="_blank"} represents a significant (10x) optimization in terms of speed and greatly improved robustness, but does not include a few features such a ligature component handling and cross-line-boundary contextualization. Graphite2 is used by LibreOffice and Firefox.
+The  [&#x2197; SilGraphite engine](https://sourceforge.net/projects/silgraphite){:target="_blank"} is currently used by OpenOffice, XeTeX, FieldWorks, and WorldPad. It includes some features not included in Graphite2, but is considerably slower. [&#x2197; Graphite2](https://projects.palaso.org/projects/graphitedev){:target="_blank"} represents a significant (10x) optimization in terms of speed and greatly improved robustness, but does not include a few features such a ligature component handling and cross-line-boundary contextualization. Graphite2 is used by LibreOffice and Firefox.
 
 The two engines support different APIs. The Graphite2 API was specifically developed to be more compatible with the approach to text layout used by most commercial software. See the [application development page](graphite_devApp) for API documentation.
 
