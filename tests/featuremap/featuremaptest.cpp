@@ -6,6 +6,7 @@
 #include <iostream>
 #include <map>
 #include <memory>
+#include <cstdint>
 #include <string>
 #include <vector>
 #include <cstdint>
